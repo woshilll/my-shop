@@ -42,6 +42,7 @@ public class LoginController {
 
     @RequestMapping(value = "/logout" ,method = RequestMethod.GET)
     public String logout(HttpServletRequest httpServletRequest){
+        httpServletRequest.getSession().removeAttribute(ConstantUtils.SESSION_USER);
         httpServletRequest.getSession().invalidate();
         return "redirect:/login";
 

@@ -156,7 +156,9 @@
             {'data':'username'},
             {'data':'phone'},
             {'data':'email'},
-            {'data':'updated'},
+            {'data':function (row) {
+                    return DateTime.format(row.updated , "yyyy-MM-dd HH:mm:ss")
+                }},
             {
                 'data':function (row) {
                     let detailUrl='/user/detail?id='+row.id;

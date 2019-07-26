@@ -7,4 +7,8 @@
     <context:component-scan base-package="com.li.my.shop">
         <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
     </context:component-scan>
+    <bean id="validator" class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean"/>
+    <bean id="beanValidator" class="com.li.my.shop.commons.validator.BeanValidator">
+        <property name="validator" ref="validator" />
+    </bean>
 </beans>

@@ -2,6 +2,24 @@ let App = function(){
     let _checkboxMaster;
     let _checkbox;
     let _idArray;
+    let defaultDropZoneOpts = {
+        url: "", // 文件提交地址
+        method: "post",  // 也可用put
+        paramName: "dropFile", // 默认为file
+        maxFiles: 1,// 一次性上传的文件数量上限
+        maxFilesize: 2, // 文件大小，单位：MB
+        acceptedFiles: ".jpg,.gif,.png,.jpeg", // 上传的类型
+        addRemoveLinks: true,
+        parallelUploads: 1,// 一次上传的文件数量
+        dictDefaultMessage: '拖动文件至此或者点击上传',
+        dictMaxFilesExceeded: "您最多只能上传1个文件！",
+        dictResponseError: '文件上传失败!',
+        dictInvalidFileType: "文件类型只能是*.jpg,*.gif,*.png,*.jpeg。",
+        dictFallbackMessage: "浏览器不受支持",
+        dictFileTooBig: "文件过大上传文件最大支持.",
+        dictRemoveLinks: "删除",
+        dictCancelUpload: "取消",
+    };
 
     /**
      * 多选框功能
@@ -156,21 +174,97 @@ let App = function(){
                 $('#modal-detail').modal('show')
             }
         })
-    }
+    };
+
+    /**
+     * 分类的树结构，使用了JQuery插件ztree
+     * @param url 异步路径
+     * @param autoParam 传入的参数
+     * @param callback 回调函数
+     */
+    let handlerMyTree = function (url , autoParam , callback) {
+        let setting = {
+            view: {
+                selectedMulti: false
+            },
+            async: {
+                enable: true,
+                url: url,
+                autoParam: autoParam,
+            }
+        };
+        $.fn.zTree.init($("#myTree"), setting);
+
+        //莫太狂的确认按钮绑定点击事件，
+        $('#btnModalOk').bind('click' , function () {
+            let zTree = $.fn.zTree.getZTreeObj("myTree");
+            let nodes = zTree.getSelectedNodes();
+            if (nodes.length == 0) {
+                alert("请先选择一个父节点");
+            }else {
+                //回调函数
+                callback(nodes);
+            }
+        })
+    };
+
+    /**
+     * 文件上传
+     * @param opts 主要传url id等参数 ，也可以修改默认参数
+     */
+    let handlerInitDropZoneUpload = function (opts) {
+        Dropzone.autoDiscover=false;
+        //defaultDropZoneOpts 继承 opts
+        $.extend(defaultDropZoneOpts , opts);
+        new Dropzone(defaultDropZoneOpts.id , defaultDropZoneOpts)
+    };
 
     return{
+        /**
+         * 初始化多选框
+         */
         init:function(){
             handlerInitChecked();
             checkAll();
         },
+        /**
+         * 初始化批量删除
+         * @param url 指定路径
+         */
         batchDelete:function (url) {
             handlerBatchDelete(url);
         },
+        /**
+         * 初始化分页表
+         * @param url 异步地址
+         * @param columns 列
+         * @returns {jQuery}
+         */
         initDataTables:function (url , columns) {
            return  handlerDataTables(url,columns)
         },
+        /**
+         * 详情信息展示
+         * @param url
+         */
         showDetail:function (url) {
             handlerShowDetail(url);
+        },
+        /**
+         * 树结构
+         * @param url
+         * @param autoParam
+         * @param callback
+         */
+        initMyTree:function (url , autoParam , callback) {
+            handlerMyTree(url , autoParam , callback);
+        },
+        /**
+         * 文件上传
+         * @param opts
+         */
+        initDropZoneUpload:function (opts) {
+            handlerInitDropZoneUpload(opts);
         }
     }
 }();

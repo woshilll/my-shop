@@ -1,7 +1,7 @@
 package com.li.my.shop.web.admin.web.controller;
 
 import com.li.my.shop.commons.dto.BaseResult;
-import com.li.my.shop.domain.PageInfo;
+import com.li.my.shop.commons.dto.PageInfo;
 import com.li.my.shop.domain.TbUser;
 import com.li.my.shop.web.admin.service.TbUserService;
 import org.apache.commons.lang3.StringUtils;
@@ -15,9 +15,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.servlet.http.HttpServletRequest;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 /**
  * @author 李洋

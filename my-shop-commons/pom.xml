@@ -16,6 +16,12 @@
     <name>my-shop-commons</name>
     <description></description>
     <dependencies>
+
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+        </dependency>
         <!-- Log Begin -->
         <dependency>
             <groupId>org.slf4j</groupId>
@@ -38,6 +44,20 @@
             <artifactId>log4j</artifactId>
         </dependency>
         <!-- Log End -->
+        <!--Jackson-->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-validator</artifactId>
+        </dependency>
+
 
     </dependencies>
 </project>

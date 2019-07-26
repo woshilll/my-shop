@@ -1,18 +1,304 @@
-2019-07-16 12:38:13,449 INFO [org.springframework.test.context.support.DefaultTestContextBootstrapper] - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
-2019-07-16 12:38:13,466 INFO [org.springframework.test.context.support.DefaultTestContextBootstrapper] - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@3532ec19, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@68c4039c, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@ae45eb6, org.springframework.test.context.support.DirtiesContextTestExecutionListener@59f99ea, org.springframework.test.context.transaction.TransactionalTestExecutionListener@27efef64, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@6f7fd0e6]
-2019-07-16 12:38:13,752 INFO [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [spring-context.xml]
-2019-07-16 12:38:14,285 INFO [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [spring-context-druid.xml]
-2019-07-16 12:38:14,354 INFO [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [spring-context-mybatis.xml]
-2019-07-16 12:38:14,387 INFO [org.springframework.context.support.GenericApplicationContext] - Refreshing org.springframework.context.support.GenericApplicationContext@52a86356: startup date [Tue Jul 16 12:38:14 CST 2019]; root of context hierarchy
-2019-07-16 12:38:18,521 INFO [com.alibaba.druid.pool.DruidDataSource] - {dataSource-1} inited
-2019-07-16 12:38:19,032 INFO [org.springframework.context.support.GenericApplicationContext] - Closing org.springframework.context.support.GenericApplicationContext@52a86356: startup date [Tue Jul 16 12:38:14 CST 2019]; root of context hierarchy
-2019-07-16 12:38:19,040 INFO [com.alibaba.druid.pool.DruidDataSource] - {dataSource-1} closed
-2019-07-16 17:53:08,167 INFO [org.springframework.test.context.support.DefaultTestContextBootstrapper] - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
-2019-07-16 17:53:08,185 INFO [org.springframework.test.context.support.DefaultTestContextBootstrapper] - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@3532ec19, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@68c4039c, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@ae45eb6, org.springframework.test.context.support.DirtiesContextTestExecutionListener@59f99ea, org.springframework.test.context.transaction.TransactionalTestExecutionListener@27efef64, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@6f7fd0e6]
-2019-07-16 17:53:08,272 INFO [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [spring-context.xml]
-2019-07-16 17:53:08,490 INFO [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [spring-context-druid.xml]
-2019-07-16 17:53:08,542 INFO [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [spring-context-mybatis.xml]
-2019-07-16 17:53:08,578 INFO [org.springframework.context.support.GenericApplicationContext] - Refreshing org.springframework.context.support.GenericApplicationContext@52a86356: startup date [Tue Jul 16 17:53:08 CST 2019]; root of context hierarchy
-2019-07-16 17:53:20,814 INFO [com.alibaba.druid.pool.DruidDataSource] - {dataSource-1} inited
-2019-07-16 17:53:21,084 INFO [org.springframework.context.support.GenericApplicationContext] - Closing org.springframework.context.support.GenericApplicationContext@52a86356: startup date [Tue Jul 16 17:53:08 CST 2019]; root of context hierarchy
-2019-07-16 17:53:21,093 INFO [com.alibaba.druid.pool.DruidDataSource] - {dataSource-1} closed
+2019-07-25 09:42:20,022 INFO [org.springframework.test.context.support.DefaultTestContextBootstrapper] - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2019-07-25 09:42:20,048 INFO [org.springframework.test.context.support.DefaultTestContextBootstrapper] - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@6dbb137d, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@3c9d0b9d, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@43301423, org.springframework.test.context.support.DirtiesContextTestExecutionListener@2f112965, org.springframework.test.context.transaction.TransactionalTestExecutionListener@1a04f701, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@4e91d63f]
+2019-07-25 09:42:20,170 INFO [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [spring-context.xml]
+2019-07-25 09:42:20,608 INFO [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [spring-context-druid.xml]
+2019-07-25 09:42:20,723 INFO [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [spring-context-mybatis.xml]
+2019-07-25 09:42:20,766 INFO [org.springframework.context.support.GenericApplicationContext] - Refreshing org.springframework.context.support.GenericApplicationContext@619713e5: startup date [Thu Jul 25 09:42:20 CST 2019]; root of context hierarchy
+2019-07-25 09:42:23,928 INFO [com.alibaba.druid.pool.DruidDataSource] - {dataSource-1} inited
+2019-07-25 09:42:24,285 INFO [org.hibernate.validator.internal.util.Version] - HV000001: Hibernate Validator 5.3.4.Final
+2019-07-25 09:42:24,316 WARN [org.springframework.context.support.GenericApplicationContext] - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'validator' defined in class path resource [spring-context.xml]: Invocation of init method failed; nested exception is javax.validation.ValidationException: HV000183: Unable to initialize 'javax.el.ExpressionFactory'. Check that you have the EL dependencies on the classpath, or use ParameterMessageInterpolator instead
+2019-07-25 09:42:24,322 INFO [com.alibaba.druid.pool.DruidDataSource] - {dataSource-1} closed
+2019-07-25 09:42:24,325 ERROR [org.springframework.test.context.TestContextManager] - Caught exception while allowing TestExecutionListener [org.springframework.test.context.support.DependencyInjectionTestExecutionListener@43301423] to prepare test instance [com.li.my.shop.web.admin.service.Test@1654a892]
+java.lang.IllegalStateException: Failed to load ApplicationContext
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:124)
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:83)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.injectDependencies(DependencyInjectionTestExecutionListener.java:117)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.prepareTestInstance(DependencyInjectionTestExecutionListener.java:83)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:230)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:228)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:287)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:289)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:247)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:94)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:191)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:68)
+	at com.intellij.rt.execution.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:47)
+	at com.intellij.rt.execution.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:242)
+	at com.intellij.rt.execution.junit.JUnitStarter.main(JUnitStarter.java:70)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'validator' defined in class path resource [spring-context.xml]: Invocation of init method failed; nested exception is javax.validation.ValidationException: HV000183: Unable to initialize 'javax.el.ExpressionFactory'. Check that you have the EL dependencies on the classpath, or use ParameterMessageInterpolator instead
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1634)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:555)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:312)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:308)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:761)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:867)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:543)
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadContext(AbstractGenericContextLoader.java:128)
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadContext(AbstractGenericContextLoader.java:60)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.delegateLoading(AbstractDelegatingSmartContextLoader.java:106)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.loadContext(AbstractDelegatingSmartContextLoader.java:249)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:98)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:116)
+	... 24 more
+Caused by: javax.validation.ValidationException: HV000183: Unable to initialize 'javax.el.ExpressionFactory'. Check that you have the EL dependencies on the classpath, or use ParameterMessageInterpolator instead
+	at org.hibernate.validator.messageinterpolation.ResourceBundleMessageInterpolator.buildExpressionFactory(ResourceBundleMessageInterpolator.java:102)
+	at org.hibernate.validator.messageinterpolation.ResourceBundleMessageInterpolator.<init>(ResourceBundleMessageInterpolator.java:45)
+	at org.hibernate.validator.internal.engine.ConfigurationImpl.getDefaultMessageInterpolator(ConfigurationImpl.java:423)
+	at org.springframework.validation.beanvalidation.LocalValidatorFactoryBean.afterPropertiesSet(LocalValidatorFactoryBean.java:271)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1692)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1630)
+	... 39 more
+Caused by: java.lang.NoClassDefFoundError: javax/el/ExpressionFactory
+	at org.hibernate.validator.messageinterpolation.ResourceBundleMessageInterpolator.buildExpressionFactory(ResourceBundleMessageInterpolator.java:98)
+	... 44 more
+2019-07-25 09:43:09,819 INFO [org.springframework.test.context.support.DefaultTestContextBootstrapper] - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2019-07-25 09:43:09,840 INFO [org.springframework.test.context.support.DefaultTestContextBootstrapper] - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@6dbb137d, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@3c9d0b9d, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@43301423, org.springframework.test.context.support.DirtiesContextTestExecutionListener@2f112965, org.springframework.test.context.transaction.TransactionalTestExecutionListener@1a04f701, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@4e91d63f]
+2019-07-25 09:43:09,959 INFO [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [spring-context.xml]
+2019-07-25 09:43:10,429 INFO [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [spring-context-druid.xml]
+2019-07-25 09:43:10,580 INFO [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [spring-context-mybatis.xml]
+2019-07-25 09:43:10,635 INFO [org.springframework.context.support.GenericApplicationContext] - Refreshing org.springframework.context.support.GenericApplicationContext@619713e5: startup date [Thu Jul 25 09:43:10 CST 2019]; root of context hierarchy
+2019-07-25 09:43:13,782 INFO [com.alibaba.druid.pool.DruidDataSource] - {dataSource-1} inited
+2019-07-25 09:43:14,142 INFO [org.hibernate.validator.internal.util.Version] - HV000001: Hibernate Validator 5.3.4.Final
+2019-07-25 09:43:14,172 WARN [org.springframework.context.support.GenericApplicationContext] - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'validator' defined in class path resource [spring-context.xml]: Invocation of init method failed; nested exception is javax.validation.ValidationException: HV000183: Unable to initialize 'javax.el.ExpressionFactory'. Check that you have the EL dependencies on the classpath, or use ParameterMessageInterpolator instead
+2019-07-25 09:43:14,178 INFO [com.alibaba.druid.pool.DruidDataSource] - {dataSource-1} closed
+2019-07-25 09:43:14,180 ERROR [org.springframework.test.context.TestContextManager] - Caught exception while allowing TestExecutionListener [org.springframework.test.context.support.DependencyInjectionTestExecutionListener@43301423] to prepare test instance [com.li.my.shop.web.admin.service.Test@1654a892]
+java.lang.IllegalStateException: Failed to load ApplicationContext
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:124)
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:83)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.injectDependencies(DependencyInjectionTestExecutionListener.java:117)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.prepareTestInstance(DependencyInjectionTestExecutionListener.java:83)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:230)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:228)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:287)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:289)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:247)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:94)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:191)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:68)
+	at com.intellij.rt.execution.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:47)
+	at com.intellij.rt.execution.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:242)
+	at com.intellij.rt.execution.junit.JUnitStarter.main(JUnitStarter.java:70)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'validator' defined in class path resource [spring-context.xml]: Invocation of init method failed; nested exception is javax.validation.ValidationException: HV000183: Unable to initialize 'javax.el.ExpressionFactory'. Check that you have the EL dependencies on the classpath, or use ParameterMessageInterpolator instead
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1634)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:555)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:312)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:308)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:761)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:867)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:543)
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadContext(AbstractGenericContextLoader.java:128)
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadContext(AbstractGenericContextLoader.java:60)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.delegateLoading(AbstractDelegatingSmartContextLoader.java:106)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.loadContext(AbstractDelegatingSmartContextLoader.java:249)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:98)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:116)
+	... 24 more
+Caused by: javax.validation.ValidationException: HV000183: Unable to initialize 'javax.el.ExpressionFactory'. Check that you have the EL dependencies on the classpath, or use ParameterMessageInterpolator instead
+	at org.hibernate.validator.messageinterpolation.ResourceBundleMessageInterpolator.buildExpressionFactory(ResourceBundleMessageInterpolator.java:102)
+	at org.hibernate.validator.messageinterpolation.ResourceBundleMessageInterpolator.<init>(ResourceBundleMessageInterpolator.java:45)
+	at org.hibernate.validator.internal.engine.ConfigurationImpl.getDefaultMessageInterpolator(ConfigurationImpl.java:423)
+	at org.springframework.validation.beanvalidation.LocalValidatorFactoryBean.afterPropertiesSet(LocalValidatorFactoryBean.java:271)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1692)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1630)
+	... 39 more
+Caused by: java.lang.NoClassDefFoundError: javax/el/ExpressionFactory
+	at org.hibernate.validator.messageinterpolation.ResourceBundleMessageInterpolator.buildExpressionFactory(ResourceBundleMessageInterpolator.java:98)
+	... 44 more
+2019-07-25 09:44:09,011 INFO [org.springframework.test.context.support.DefaultTestContextBootstrapper] - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2019-07-25 09:44:09,032 INFO [org.springframework.test.context.support.DefaultTestContextBootstrapper] - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@6dbb137d, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@3c9d0b9d, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@43301423, org.springframework.test.context.support.DirtiesContextTestExecutionListener@2f112965, org.springframework.test.context.transaction.TransactionalTestExecutionListener@1a04f701, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@4e91d63f]
+2019-07-25 09:44:09,172 INFO [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [spring-mvc.xml]
+2019-07-25 09:44:09,820 INFO [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [spring-context.xml]
+2019-07-25 09:44:09,930 INFO [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [spring-context-druid.xml]
+2019-07-25 09:44:09,959 INFO [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [spring-context-mybatis.xml]
+2019-07-25 09:44:09,990 INFO [org.springframework.context.support.GenericApplicationContext] - Refreshing org.springframework.context.support.GenericApplicationContext@619713e5: startup date [Thu Jul 25 09:44:09 CST 2019]; root of context hierarchy
+2019-07-25 09:44:13,986 INFO [com.alibaba.druid.pool.DruidDataSource] - {dataSource-1} inited
+2019-07-25 09:44:14,566 INFO [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/content/category/form],methods=[GET]}" onto public java.lang.String com.li.my.shop.web.admin.web.controller.ContentCategoryController.form()
+2019-07-25 09:44:14,568 INFO [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/content/category/list],methods=[GET]}" onto public java.lang.String com.li.my.shop.web.admin.web.controller.ContentCategoryController.list(org.springframework.ui.Model)
+2019-07-25 09:44:14,568 INFO [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/content/category/tree/data],methods=[POST]}" onto public java.util.List<com.li.my.shop.domain.TbContentCategory> com.li.my.shop.web.admin.web.controller.ContentCategoryController.selectByParentId(java.lang.Long)
+2019-07-25 09:44:14,571 INFO [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/content/form],methods=[GET]}" onto public java.lang.String com.li.my.shop.web.admin.web.controller.ContentController.form()
+2019-07-25 09:44:14,571 INFO [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/content/list],methods=[GET]}" onto public java.lang.String com.li.my.shop.web.admin.web.controller.ContentController.list()
+2019-07-25 09:44:14,572 INFO [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/content/save],methods=[POST]}" onto public java.lang.String com.li.my.shop.web.admin.web.controller.ContentController.save(com.li.my.shop.domain.TbContent,org.springframework.ui.Model,org.springframework.web.servlet.mvc.support.RedirectAttributes)
+2019-07-25 09:44:14,572 INFO [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/content/page],methods=[GET]}" onto public com.li.my.shop.commons.dto.PageInfo<com.li.my.shop.domain.TbContent> com.li.my.shop.web.admin.web.controller.ContentController.page(javax.servlet.http.HttpServletRequest,com.li.my.shop.domain.TbContent)
+2019-07-25 09:44:14,572 INFO [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/content/batchDelete],methods=[POST]}" onto public com.li.my.shop.commons.dto.BaseResult com.li.my.shop.web.admin.web.controller.ContentController.batchDelete(java.lang.String)
+2019-07-25 09:44:14,573 INFO [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/content/detail],methods=[GET]}" onto public java.lang.String com.li.my.shop.web.admin.web.controller.ContentController.detail(com.li.my.shop.domain.TbContent)
+2019-07-25 09:44:14,574 INFO [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/logout],methods=[GET]}" onto public java.lang.String com.li.my.shop.web.admin.web.controller.LoginController.logout(javax.servlet.http.HttpServletRequest)
+2019-07-25 09:44:14,574 INFO [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[ || /login],methods=[GET]}" onto public java.lang.String com.li.my.shop.web.admin.web.controller.LoginController.login()
+2019-07-25 09:44:14,574 INFO [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/login],methods=[POST]}" onto public java.lang.String com.li.my.shop.web.admin.web.controller.LoginController.login(java.lang.String,java.lang.String,javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)
+2019-07-25 09:44:14,575 INFO [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/main],methods=[GET]}" onto public java.lang.String com.li.my.shop.web.admin.web.controller.MainController.main()
+2019-07-25 09:44:14,576 INFO [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/upload],methods=[POST]}" onto public java.util.Map<java.lang.String, java.lang.Object> com.li.my.shop.web.admin.web.controller.UploadController.uploadPic(org.springframework.web.multipart.MultipartFile,org.springframework.web.multipart.MultipartFile,javax.servlet.http.HttpServletRequest)
+2019-07-25 09:44:14,580 INFO [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/user/form],methods=[GET]}" onto public java.lang.String com.li.my.shop.web.admin.web.controller.UserController.form()
+2019-07-25 09:44:14,581 INFO [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/user/list],methods=[GET]}" onto public java.lang.String com.li.my.shop.web.admin.web.controller.UserController.list()
+2019-07-25 09:44:14,581 INFO [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/user/save],methods=[POST]}" onto public java.lang.String com.li.my.shop.web.admin.web.controller.UserController.save(com.li.my.shop.domain.TbUser,org.springframework.ui.Model,org.springframework.web.servlet.mvc.support.RedirectAttributes)
+2019-07-25 09:44:14,582 INFO [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/user/page],methods=[GET]}" onto public com.li.my.shop.commons.dto.PageInfo<com.li.my.shop.domain.TbUser> com.li.my.shop.web.admin.web.controller.UserController.page(javax.servlet.http.HttpServletRequest,com.li.my.shop.domain.TbUser)
+2019-07-25 09:44:14,582 INFO [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/user/batchDelete],methods=[POST]}" onto public com.li.my.shop.commons.dto.BaseResult com.li.my.shop.web.admin.web.controller.UserController.batchDelete(java.lang.String)
+2019-07-25 09:44:14,582 INFO [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/user/detail],methods=[GET]}" onto public java.lang.String com.li.my.shop.web.admin.web.controller.UserController.detail(com.li.my.shop.domain.TbUser)
+2019-07-25 09:44:14,623 INFO [org.hibernate.validator.internal.util.Version] - HV000001: Hibernate Validator 5.3.4.Final
+2019-07-25 09:44:15,019 INFO [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter] - Looking for @ControllerAdvice: org.springframework.context.support.GenericApplicationContext@619713e5: startup date [Thu Jul 25 09:44:09 CST 2019]; root of context hierarchy
+2019-07-25 09:44:15,071 INFO [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter] - Looking for @ControllerAdvice: org.springframework.context.support.GenericApplicationContext@619713e5: startup date [Thu Jul 25 09:44:09 CST 2019]; root of context hierarchy
+2019-07-25 09:44:15,144 WARN [org.springframework.context.support.GenericApplicationContext] - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0': Invocation of init method failed; nested exception is java.lang.IllegalStateException: WebApplicationObjectSupport instance [ResourceHttpRequestHandler [locations=[class path resource [static/]], resolvers=[org.springframework.web.servlet.resource.PathResourceResolver@148c7c4b]]] does not run in a WebApplicationContext but in: org.springframework.context.support.GenericApplicationContext@619713e5: startup date [Thu Jul 25 09:44:09 CST 2019]; root of context hierarchy
+2019-07-25 09:44:15,153 INFO [com.alibaba.druid.pool.DruidDataSource] - {dataSource-1} closed
+2019-07-25 09:44:15,156 ERROR [org.springframework.test.context.TestContextManager] - Caught exception while allowing TestExecutionListener [org.springframework.test.context.support.DependencyInjectionTestExecutionListener@43301423] to prepare test instance [com.li.my.shop.web.admin.service.Test@4d0753c9]
+java.lang.IllegalStateException: Failed to load ApplicationContext
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:124)
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:83)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.injectDependencies(DependencyInjectionTestExecutionListener.java:117)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.prepareTestInstance(DependencyInjectionTestExecutionListener.java:83)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:230)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:228)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:287)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:289)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:247)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:94)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:191)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:68)
+	at com.intellij.rt.execution.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:47)
+	at com.intellij.rt.execution.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:242)
+	at com.intellij.rt.execution.junit.JUnitStarter.main(JUnitStarter.java:70)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0': Invocation of init method failed; nested exception is java.lang.IllegalStateException: WebApplicationObjectSupport instance [ResourceHttpRequestHandler [locations=[class path resource [static/]], resolvers=[org.springframework.web.servlet.resource.PathResourceResolver@148c7c4b]]] does not run in a WebApplicationContext but in: org.springframework.context.support.GenericApplicationContext@619713e5: startup date [Thu Jul 25 09:44:09 CST 2019]; root of context hierarchy
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1634)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:555)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:312)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:308)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:761)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:867)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:543)
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadContext(AbstractGenericContextLoader.java:128)
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadContext(AbstractGenericContextLoader.java:60)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.delegateLoading(AbstractDelegatingSmartContextLoader.java:106)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.loadContext(AbstractDelegatingSmartContextLoader.java:249)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:98)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:116)
+	... 24 more
+Caused by: java.lang.IllegalStateException: WebApplicationObjectSupport instance [ResourceHttpRequestHandler [locations=[class path resource [static/]], resolvers=[org.springframework.web.servlet.resource.PathResourceResolver@148c7c4b]]] does not run in a WebApplicationContext but in: org.springframework.context.support.GenericApplicationContext@619713e5: startup date [Thu Jul 25 09:44:09 CST 2019]; root of context hierarchy
+	at org.springframework.web.context.support.WebApplicationObjectSupport.getWebApplicationContext(WebApplicationObjectSupport.java:112)
+	at org.springframework.web.context.support.WebApplicationObjectSupport.getServletContext(WebApplicationObjectSupport.java:128)
+	at org.springframework.web.servlet.resource.ResourceHttpRequestHandler.initContentNegotiationStrategy(ResourceHttpRequestHandler.java:410)
+	at org.springframework.web.servlet.resource.ResourceHttpRequestHandler.afterPropertiesSet(ResourceHttpRequestHandler.java:328)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1692)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1630)
+	... 39 more
+2019-07-25 09:45:25,632 INFO [org.springframework.test.context.support.DefaultTestContextBootstrapper] - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2019-07-25 09:45:25,652 INFO [org.springframework.test.context.support.DefaultTestContextBootstrapper] - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@6dbb137d, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@3c9d0b9d, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@43301423, org.springframework.test.context.support.DirtiesContextTestExecutionListener@2f112965, org.springframework.test.context.transaction.TransactionalTestExecutionListener@1a04f701, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@4e91d63f]
+2019-07-25 09:45:25,763 INFO [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [spring-mvc.xml]
+2019-07-25 09:45:26,418 INFO [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [spring-context.xml]
+2019-07-25 09:45:26,581 INFO [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [spring-context-druid.xml]
+2019-07-25 09:45:26,626 INFO [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [spring-context-mybatis.xml]
+2019-07-25 09:45:26,663 INFO [org.springframework.context.support.GenericApplicationContext] - Refreshing org.springframework.context.support.GenericApplicationContext@619713e5: startup date [Thu Jul 25 09:45:26 CST 2019]; root of context hierarchy
+2019-07-25 09:45:31,287 INFO [com.alibaba.druid.pool.DruidDataSource] - {dataSource-1} inited
+2019-07-25 09:45:31,875 INFO [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/content/category/form],methods=[GET]}" onto public java.lang.String com.li.my.shop.web.admin.web.controller.ContentCategoryController.form()
+2019-07-25 09:45:31,877 INFO [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/content/category/list],methods=[GET]}" onto public java.lang.String com.li.my.shop.web.admin.web.controller.ContentCategoryController.list(org.springframework.ui.Model)
+2019-07-25 09:45:31,877 INFO [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/content/category/tree/data],methods=[POST]}" onto public java.util.List<com.li.my.shop.domain.TbContentCategory> com.li.my.shop.web.admin.web.controller.ContentCategoryController.selectByParentId(java.lang.Long)
+2019-07-25 09:45:31,882 INFO [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/content/form],methods=[GET]}" onto public java.lang.String com.li.my.shop.web.admin.web.controller.ContentController.form()
+2019-07-25 09:45:31,883 INFO [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/content/list],methods=[GET]}" onto public java.lang.String com.li.my.shop.web.admin.web.controller.ContentController.list()
+2019-07-25 09:45:31,883 INFO [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/content/save],methods=[POST]}" onto public java.lang.String com.li.my.shop.web.admin.web.controller.ContentController.save(com.li.my.shop.domain.TbContent,org.springframework.ui.Model,org.springframework.web.servlet.mvc.support.RedirectAttributes)
+2019-07-25 09:45:31,885 INFO [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/content/detail],methods=[GET]}" onto public java.lang.String com.li.my.shop.web.admin.web.controller.ContentController.detail(com.li.my.shop.domain.TbContent)
+2019-07-25 09:45:31,887 INFO [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/content/page],methods=[GET]}" onto public com.li.my.shop.commons.dto.PageInfo<com.li.my.shop.domain.TbContent> com.li.my.shop.web.admin.web.controller.ContentController.page(javax.servlet.http.HttpServletRequest,com.li.my.shop.domain.TbContent)
+2019-07-25 09:45:31,888 INFO [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/content/batchDelete],methods=[POST]}" onto public com.li.my.shop.commons.dto.BaseResult com.li.my.shop.web.admin.web.controller.ContentController.batchDelete(java.lang.String)
+2019-07-25 09:45:31,889 INFO [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/logout],methods=[GET]}" onto public java.lang.String com.li.my.shop.web.admin.web.controller.LoginController.logout(javax.servlet.http.HttpServletRequest)
+2019-07-25 09:45:31,889 INFO [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[ || /login],methods=[GET]}" onto public java.lang.String com.li.my.shop.web.admin.web.controller.LoginController.login()
+2019-07-25 09:45:31,890 INFO [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/login],methods=[POST]}" onto public java.lang.String com.li.my.shop.web.admin.web.controller.LoginController.login(java.lang.String,java.lang.String,javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)
+2019-07-25 09:45:31,890 INFO [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/main],methods=[GET]}" onto public java.lang.String com.li.my.shop.web.admin.web.controller.MainController.main()
+2019-07-25 09:45:31,891 INFO [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/upload],methods=[POST]}" onto public java.util.Map<java.lang.String, java.lang.Object> com.li.my.shop.web.admin.web.controller.UploadController.uploadPic(org.springframework.web.multipart.MultipartFile,org.springframework.web.multipart.MultipartFile,javax.servlet.http.HttpServletRequest)
+2019-07-25 09:45:31,897 INFO [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/user/form],methods=[GET]}" onto public java.lang.String com.li.my.shop.web.admin.web.controller.UserController.form()
+2019-07-25 09:45:31,897 INFO [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/user/list],methods=[GET]}" onto public java.lang.String com.li.my.shop.web.admin.web.controller.UserController.list()
+2019-07-25 09:45:31,898 INFO [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/user/save],methods=[POST]}" onto public java.lang.String com.li.my.shop.web.admin.web.controller.UserController.save(com.li.my.shop.domain.TbUser,org.springframework.ui.Model,org.springframework.web.servlet.mvc.support.RedirectAttributes)
+2019-07-25 09:45:31,898 INFO [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/user/detail],methods=[GET]}" onto public java.lang.String com.li.my.shop.web.admin.web.controller.UserController.detail(com.li.my.shop.domain.TbUser)
+2019-07-25 09:45:31,899 INFO [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/user/page],methods=[GET]}" onto public com.li.my.shop.commons.dto.PageInfo<com.li.my.shop.domain.TbUser> com.li.my.shop.web.admin.web.controller.UserController.page(javax.servlet.http.HttpServletRequest,com.li.my.shop.domain.TbUser)
+2019-07-25 09:45:31,900 INFO [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] - Mapped "{[/user/batchDelete],methods=[POST]}" onto public com.li.my.shop.commons.dto.BaseResult com.li.my.shop.web.admin.web.controller.UserController.batchDelete(java.lang.String)
+2019-07-25 09:45:31,942 INFO [org.hibernate.validator.internal.util.Version] - HV000001: Hibernate Validator 5.3.4.Final
+2019-07-25 09:45:32,225 INFO [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter] - Looking for @ControllerAdvice: org.springframework.context.support.GenericApplicationContext@619713e5: startup date [Thu Jul 25 09:45:26 CST 2019]; root of context hierarchy
+2019-07-25 09:45:32,278 INFO [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter] - Looking for @ControllerAdvice: org.springframework.context.support.GenericApplicationContext@619713e5: startup date [Thu Jul 25 09:45:26 CST 2019]; root of context hierarchy
+2019-07-25 09:45:32,346 WARN [org.springframework.context.support.GenericApplicationContext] - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0': Invocation of init method failed; nested exception is java.lang.IllegalStateException: WebApplicationObjectSupport instance [ResourceHttpRequestHandler [locations=[class path resource [static/]], resolvers=[org.springframework.web.servlet.resource.PathResourceResolver@43da41e]]] does not run in a WebApplicationContext but in: org.springframework.context.support.GenericApplicationContext@619713e5: startup date [Thu Jul 25 09:45:26 CST 2019]; root of context hierarchy
+2019-07-25 09:45:32,353 INFO [com.alibaba.druid.pool.DruidDataSource] - {dataSource-1} closed
+2019-07-25 09:45:32,357 ERROR [org.springframework.test.context.TestContextManager] - Caught exception while allowing TestExecutionListener [org.springframework.test.context.support.DependencyInjectionTestExecutionListener@43301423] to prepare test instance [com.li.my.shop.web.admin.service.Test@4afd21c6]
+java.lang.IllegalStateException: Failed to load ApplicationContext
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:124)
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:83)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.injectDependencies(DependencyInjectionTestExecutionListener.java:117)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.prepareTestInstance(DependencyInjectionTestExecutionListener.java:83)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:230)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:228)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:287)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:289)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:247)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:94)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:191)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:68)
+	at com.intellij.rt.execution.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:47)
+	at com.intellij.rt.execution.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:242)
+	at com.intellij.rt.execution.junit.JUnitStarter.main(JUnitStarter.java:70)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0': Invocation of init method failed; nested exception is java.lang.IllegalStateException: WebApplicationObjectSupport instance [ResourceHttpRequestHandler [locations=[class path resource [static/]], resolvers=[org.springframework.web.servlet.resource.PathResourceResolver@43da41e]]] does not run in a WebApplicationContext but in: org.springframework.context.support.GenericApplicationContext@619713e5: startup date [Thu Jul 25 09:45:26 CST 2019]; root of context hierarchy
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1634)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:555)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:312)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:308)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:761)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:867)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:543)
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadContext(AbstractGenericContextLoader.java:128)
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadContext(AbstractGenericContextLoader.java:60)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.delegateLoading(AbstractDelegatingSmartContextLoader.java:106)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.loadContext(AbstractDelegatingSmartContextLoader.java:249)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:98)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:116)
+	... 24 more
+Caused by: java.lang.IllegalStateException: WebApplicationObjectSupport instance [ResourceHttpRequestHandler [locations=[class path resource [static/]], resolvers=[org.springframework.web.servlet.resource.PathResourceResolver@43da41e]]] does not run in a WebApplicationContext but in: org.springframework.context.support.GenericApplicationContext@619713e5: startup date [Thu Jul 25 09:45:26 CST 2019]; root of context hierarchy
+	at org.springframework.web.context.support.WebApplicationObjectSupport.getWebApplicationContext(WebApplicationObjectSupport.java:112)
+	at org.springframework.web.context.support.WebApplicationObjectSupport.getServletContext(WebApplicationObjectSupport.java:128)
+	at org.springframework.web.servlet.resource.ResourceHttpRequestHandler.initContentNegotiationStrategy(ResourceHttpRequestHandler.java:410)
+	at org.springframework.web.servlet.resource.ResourceHttpRequestHandler.afterPropertiesSet(ResourceHttpRequestHandler.java:328)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1692)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1630)
+	... 39 more

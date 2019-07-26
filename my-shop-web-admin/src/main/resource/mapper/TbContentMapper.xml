@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.li.my.shop.web.admin.dao.TbContentDao">
+    <sql id="content">
+        c.id,
+        c.category_id,
+        c.title,
+        c.sub_title,
+        c.title_desc,
+        c.url,
+        c.pic,
+        c.pic2,
+        c.content,
+        c.created,
+        c.updated,
+        cc.id AS "tbContentCategory.id",
+        cc.name AS "tbContentCategory.name"
+    </sql>
+    <sql id="contentJoins">
+        LEFT JOIN tb_content_category AS cc ON c.category_id=cc.id
+    </sql>
+    <select id="selectAll" resultType="com.li.my.shop.domain.TbContent">
+        SELECT
+        <include refid="content"/>
+        FROM tb_content AS c
+        <include refid="contentJoins"/>
+    </select>
+
+    <insert id="insert">
+        INSERT INTO tb_content
+        (category_id, title, sub_title, title_desc, url, pic, pic2, content, created, updated)
+        VALUES
+        (#{tbContentCategory.id}, #{title}, #{subTitle}, #{titleDesc}, #{url}, #{pic}, #{pic2}, #{content}, #{created}, #{updated})
+    </insert>
+    <update id="updateById">
+        UPDATE tb_content
+        SET
+            category_id=#{tbContentCategory.id},
+            title=#{title},
+            sub_title=#{subTitle},
+            title_desc=#{titleDesc},
+            url=#{url},
+            pic=#{pic},
+            pic2=#{pic2},
+            content=#{content},
+            updated=#{updated}
+        WHERE id=#{id}
+    </update>
+    <select id="getById" resultType="com.li.my.shop.domain.TbContent">
+        SELECT
+        <include refid="content"/>
+        FROM tb_content AS c
+        <include refid="contentJoins"/>
+        WHERE c.id=#{id}
+    </select>
+
+
+    <select id="batchDelete">
+        DELETE FROM tb_content
+        WHERE id IN
+        <foreach collection="array" open="(" close=")" separator="," item="id">
+            #{id}
+        </foreach>
+    </select>
+    <select id="count" resultType="int">
+        SELECT COUNT(*)
+        FROM tb_content
+        <where>
+            <if test="title != null and title != ''">
+                AND title LIKE concat ('%',#{title},'%')
+            </if>
+            <if test="subTitle != null and subTitle != ''">
+                AND sub_title LIKE concat ('%',#{subTitle},'%')
+            </if>
+            <if test="titleDesc != null and titleDesc != ''">
+                AND title_desc LIKE concat ('%',#{titleDesc},'%')
+            </if>
+        </where>
+    </select>
+    <select id="page" resultType="com.li.my.shop.domain.TbContent">
+        SELECT
+        <include refid="content"/>
+        FROM tb_content AS c
+        <include refid="contentJoins"/>
+        <where>
+            <if test="pageParams.title != null and pageParams.title != ''">
+                AND c.title LIKE concat ('%',#{pageParams.title},'%')
+            </if>
+            <if test="pageParams.subTitle != null and pageParams.subTitle != ''">
+                AND c.sub_title LIKE concat ('%',#{pageParams.subTitle},'%')
+            </if>
+            <if test="pageParams.titleDesc != null and pageParams.titleDesc != ''">
+                AND c.title_desc LIKE concat ('%',#{pageParams.titleDesc},'%')
+            </if>
+        </where>
+        LIMIT #{start},#{length}
+    </select>
+</mapper>

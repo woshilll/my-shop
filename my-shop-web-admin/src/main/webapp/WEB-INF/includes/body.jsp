@@ -6,7 +6,7 @@
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title">用户详情</h4>
+                <h4 class="modal-title">用户详情 </h4>
             </div>
             <div class="modal-body">
                 <p id="modal-body-detail"></p>
@@ -50,5 +50,6 @@
 <script src="/static/assets/jquery-validation/js/jquery.validate.min.js"></script>
 <script src="/static/assets/jquery-validation/js/additional-methods.min.js"></script>
 <script src="/static/assets/jquery-validation/js/localization/messages_zh.js"></script>
-<script src="/static/assets/app/validate.js"></script>
+<%--<script src="/static/assets/app/validate.js"></script>--%>
 <script src="/static/assets/app/app.js"></script>
+<script src="/static/assets/app/dateTime.js"></script>
