@@ -108,6 +108,9 @@
             $('#categoryParentName').val(node.name);
             $('#modal-default').modal('hide')
         });
+        setTimeout(function () {
+            $('#message').css("display" , "none")
+        } , 5000);
     });
 
 </script>

@@ -11,6 +11,7 @@ import com.li.my.shop.web.admin.service.TbUserService;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.DigestUtils;
 
 import java.util.Date;
@@ -22,6 +23,7 @@ import java.util.Map;
  * @author 李洋
  * @date 2019-07-16 12:30
  */
+@Transactional(readOnly = true , rollbackFor = {})
 @Service
 public class TbUserServiceImpl extends AbstractBaseServiceImpl<TbUser , TbUserDao> implements TbUserService {
 

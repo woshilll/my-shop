@@ -9,4 +9,9 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 public interface TbContentDao extends BaseDao<TbContent> {
+    /**
+     * 通过分类id删除所属内容
+     * @param ids
+     */
+    void deleteByCategoryIds(String[] ids);
 }

@@ -47,4 +47,18 @@ public abstract class AbstractBaseTreeServiceImpl<T extends BaseEntity , D exten
         }
         return dao.selectByParentId(parentId);
     }
+
+    /**
+     * 批量删除
+     * @param ids
+     */
+    @Override
+    public void batchDelete(String[] ids) {
+        dao.batchDelete(ids);
+    }
+
+    @Override
+    public void updateById(T entity) {
+        dao.updateById(entity);
+    }
 }

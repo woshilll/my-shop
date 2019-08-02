@@ -50,8 +50,7 @@
                         <div class="box-header">
                             <h3 class="box-title">内容列表</h3>
                             <div class="row" style="padding-left: 12px;padding-top: 10px;">
-                                    <a href="/content/category/form" type="button" class="btn btn-default btn-sm"><i class="fa fa-search"></i> 增加</a>&nbsp;&nbsp;&nbsp;
-                                    <button  type="button" class="btn btn-default btn-sm"><i class="fa fa-trash"></i> 删除</button>&nbsp;&nbsp;&nbsp;
+                                    <a href="/content/category/form" type="button" class="btn btn-default btn-sm"><i class="fa fa-plus"></i> 增加</a>&nbsp;&nbsp;&nbsp;
                                     <a href="#" type="button" class="btn btn-default btn-sm"><i class="fa fa-download"></i> 导入</a>&nbsp;&nbsp;&nbsp;
                                     <a href="#" type="button" class="btn btn-default btn-sm"><i class="fa fa-upload"></i> 导出</a>&nbsp;&nbsp;&nbsp;
                             </div>
@@ -75,7 +74,7 @@
                                             <td>${contentCategory.sortOrder}</td>
                                             <td>
                                                 <a href="/content/category/form?id=${contentCategory.id}" type="button" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i> 修改</a>&nbsp;&nbsp;
-                                                <a href="#" type="button" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i> 删除</a>&nbsp;&nbsp;
+                                                <button onclick="App.initSingleDelete('/content/category/delete' , ${contentCategory.id} , '删除当前分类会同时删除下级分类，以及被删分类的内容，你确定吗？')" type="button" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i> 删除</button>&nbsp;&nbsp;
                                                 <a href="/content/category/form?parent.id=${contentCategory.id}&parent.name=${contentCategory.name}" type="button" class="btn btn-default btn-sm"><i class="fa fa-trash"></i> 新增下级菜单</a>&nbsp;&nbsp;
                                             </td>
                                         </tr>
@@ -94,6 +93,7 @@
     <jsp:include page="../includes/footer.jsp"/>
 </div>
 <jsp:include page="../includes/body.jsp"/>
+<sys:modal tittle="删除分类"/>
 <script src="/static/assets/plugins/treeTable/jquery.treeTable.min.js">
 </script>
 <script>
@@ -105,7 +105,8 @@
 
         setTimeout(function () {
             $('#message').css("display" , "none")
-        } , 2000)
+        } , 5000);
+
     });
 </script>
 </body>

@@ -37,6 +37,8 @@ public class UploadController {
         String fileSuffix = originalFilename.substring(originalFilename.lastIndexOf("."));
 
         String filePath = request.getSession().getServletContext().getRealPath(UPLOAD_PATH);
+        //服务器地址
+        String serverPath = request.getScheme() + "://" +request.getServerName() + ":" + request.getServerPort();
         File file=new File(filePath);
         if (!file.exists()){
             file.mkdir();
@@ -49,12 +51,11 @@ public class UploadController {
         }
         //添加图片
         if (dropFile != null){
-            result.put("fileName" , UPLOAD_PATH+file.getName());
+            result.put("fileName" , serverPath + UPLOAD_PATH+file.getName());
         }
         //富文本编辑器
         else {
-            //服务器地址
-            String serverPath = request.getScheme() + "://" +request.getServerName() + ":" + request.getServerPort();
+
             result.put("errno" , 0);
             result.put("data" , new String[]{
                     serverPath + UPLOAD_PATH +file.getName()

@@ -34,7 +34,7 @@
         <!-- Main content -->
         <section class="content">
             <c:if test="${baseResult != null}">
-                <div class="alert alert-danger alert-dismissible" >
+                <div class="alert alert-danger alert-dismissible" id="message" >
                     <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
                         ${baseResult.message}
                 </div>
@@ -99,5 +99,12 @@
 </div>
 
 <jsp:include page="../includes/body.jsp"/>
+<script>
+    $(function () {
+        setTimeout(function () {
+            $('#message').css("display" , "none")
+        } , 5000)
+    })
+</script>
 </body>
 </html>

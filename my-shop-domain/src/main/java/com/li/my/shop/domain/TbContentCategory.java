@@ -1,6 +1,7 @@
 package com.li.my.shop.domain;
 
 import com.li.my.shop.commons.persistence.BaseEntity;
+import com.li.my.shop.commons.persistence.BaseTreeEntity;
 import lombok.Data;
 import org.hibernate.validator.constraints.Length;
 
@@ -11,7 +12,7 @@ import javax.validation.constraints.NotNull;
  * @date 2019-07-20 11:00
  */
 @Data
-public class TbContentCategory extends BaseEntity {
+public class TbContentCategory extends BaseTreeEntity<TbContentCategory> {
     @Length(min = 1 , max = 20 , message = "分类名须在 1-20 之间")
     private String name;
     private Integer status;

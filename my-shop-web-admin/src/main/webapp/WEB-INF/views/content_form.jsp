@@ -39,7 +39,7 @@
         <!-- Main content -->
         <section class="content">
             <c:if test="${baseResult != null}">
-                <div class="alert alert-danger alert-dismissible" >
+                <div class="alert alert-danger alert-dismissible" id="message" >
                     <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
                         ${baseResult.message}
                 </div>
@@ -149,6 +149,10 @@
             $('#modal-default').modal('hide')
         });
         initWangEditor();
+
+        setTimeout(function () {
+            $('#message').css("display" , "none")
+        } , 5000);
     });
     function initWangEditor (){
         //富文本编辑器

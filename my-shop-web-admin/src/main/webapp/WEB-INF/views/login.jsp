@@ -45,7 +45,7 @@
     <!-- /.login-logo -->
     <div class="login-box-body">
         <p class="login-box-msg">欢迎管理员登录</p>
-        <div class="alert alert-danger alert-dismissible" ${message == null ? "style='display:none;'" : ""}>
+        <div class="alert alert-danger alert-dismissible" ${message == null ? "style='display:none;'" : ""} id="message">
             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
             ${message}
         </div>
@@ -94,6 +94,10 @@
             radioClass: 'iradio_square-blue',
             increaseArea: '20%' /* optional */
         });
+        setTimeout(function () {
+            $('#message').css("display" , "none")
+        } , 5000);
+
     });
 </script>
 </body>

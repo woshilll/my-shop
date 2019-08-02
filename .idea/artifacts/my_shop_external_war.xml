@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="my-shop-external:war">
+    <output-path>$PROJECT_DIR$/my-shop-external/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>my-shop-external</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="my-shop-external-1.0.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="my-shop-external:war exploded" />
+    </root>
+  </artifact>
+</component>

@@ -38,7 +38,7 @@
             <div class="row">
                 <div class="col-xs-12">
                     <c:if test="${baseResult != null}">
-                        <div class="alert alert-success alert-dismissible" id="display">
+                        <div class="alert alert-success alert-dismissible" id="message">
                             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
                                 ${baseResult.message}
                         </div>
@@ -86,7 +86,7 @@
                         <div class="box-header">
                             <h3 class="box-title">内容列表</h3>
                             <div class="row" style="padding-left: 12px;padding-top: 10px;">
-                                    <a href="/content/form" type="button" class="btn btn-default btn-sm"><i class="fa fa-search"></i> 增加</a>&nbsp;&nbsp;&nbsp;
+                                    <a href="/content/form" type="button" class="btn btn-default btn-sm"><i class="fa fa-plus"></i> 增加</a>&nbsp;&nbsp;&nbsp;
                                     <button  type="button" class="btn btn-default btn-sm" onclick="App.batchDelete('/content/batchDelete')"><i class="fa fa-trash"></i> 删除</button>&nbsp;&nbsp;&nbsp;
                                     <a href="#" type="button" class="btn btn-default btn-sm"><i class="fa fa-download"></i> 导入</a>&nbsp;&nbsp;&nbsp;
                                     <a href="#" type="button" class="btn btn-default btn-sm"><i class="fa fa-upload"></i> 导出</a>&nbsp;&nbsp;&nbsp;
@@ -180,11 +180,15 @@
                     let detailUrl='/content/detail?id='+row.id;
                     return '<button onclick="App.showDetail(\''+detailUrl+'\');"  type="button" class="btn btn-default btn-sm"><i class="fa fa-search"></i> 查看</button >&nbsp;&nbsp;'+
                         '<a href="/content/form?id='+row.id+'" type="button" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i> 修改</a>&nbsp;&nbsp;'+
-                        '<a href="#" type="button" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i> 删除</a>&nbsp;&nbsp;';
+                        '<button onclick="App.initSingleDelete(\'/content/batchDelete\',\''+row.id+'\')" type="button" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i> 删除</button>&nbsp;&nbsp;';
                 }
             }
         ];
         _dataTable=App.initDataTables('/content/page' , columns);
+
+        setTimeout(function () {
+            $('#message').css("display" , "none")
+        } , 5000);
     });
 
     

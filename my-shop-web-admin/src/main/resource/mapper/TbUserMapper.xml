@@ -45,13 +45,13 @@
     </select>
 
 
-    <select id="batchDelete">
+    <delete id="batchDelete">
         DELETE FROM tb_user
         WHERE id IN
         <foreach collection="array" open="(" close=")" separator="," item="id">
             #{id}
         </foreach>
-    </select>
+    </delete>
     <select id="count" resultType="int">
         SELECT COUNT(*)
         FROM tb_user

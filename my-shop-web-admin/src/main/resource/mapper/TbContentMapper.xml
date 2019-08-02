@@ -19,6 +19,22 @@
     <sql id="contentJoins">
         LEFT JOIN tb_content_category AS cc ON c.category_id=cc.id
     </sql>
+    <delete id="deleteByCategoryIds">
+        DELETE FROM
+        tb_content
+        WHERE category_id IN
+        <foreach collection="array" open="(" close=")" separator="," item="id">
+            #{id}
+        </foreach>
+    </delete>
+
+    <delete id="batchDelete">
+        DELETE FROM tb_content
+        WHERE id IN
+        <foreach collection="array" open="(" close=")" separator="," item="id">
+            #{id}
+        </foreach>
+    </delete>
     <select id="selectAll" resultType="com.li.my.shop.domain.TbContent">
         SELECT
         <include refid="content"/>
@@ -55,13 +71,7 @@
     </select>
 
 
-    <select id="batchDelete">
-        DELETE FROM tb_content
-        WHERE id IN
-        <foreach collection="array" open="(" close=")" separator="," item="id">
-            #{id}
-        </foreach>
-    </select>
+
     <select id="count" resultType="int">
         SELECT COUNT(*)
         FROM tb_content

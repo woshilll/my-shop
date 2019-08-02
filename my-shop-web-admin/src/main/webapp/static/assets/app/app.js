@@ -65,45 +65,64 @@ let App = function(){
         $('#modal-default').modal('show');
         
         $('#btnModalOk').bind("click",function () {
-            del();
+            handlerDelete(_idArray , url);
         });
-        //删除功能
-        function del() {
-            $('#modal-default').modal('hide');
-            if (_idArray.length === 0){
+    };
+    /**
+     * 单个删除功能实现
+     * @param url
+     * @param id
+     */
+    let handlerSingleDelete = function (url , id , msg) {
+        msg = msg || "你确定要删除它吗QAQ？";
+        _idArray = new Array();
+        _idArray.push(id);
+        $('#modal-message').html(msg);
+        $('#modal-default').modal('show');
+        $('#btnModalOk').bind("click",function () {
+            handlerDelete(_idArray , url);
+        });
+    };
+    /**
+     * 删除功能实现
+     * @param _idArray ID数组
+     * @param url 删除路径
+     */
+    let handlerDelete = function (_idArray , url){
+        $('#modal-default').modal('hide');
+        if (_idArray.length === 0){
 
-            }
-            else {
-                setTimeout(function () {
-                    $.ajax({
-                        'url':url,
-                        'type':'post',
-                        'data':{'ids':_idArray.toString()},
-                        'dataType':'JSON',
-                        'success':function (data) {
-                            //解绑操作
-                            $('#btnModalOk').unbind('click');
-                            if (data.status === 200){
-                                //重新绑定按钮点击事件，并加载页面
-                                $('#btnModalOk').bind('click',function () {
-                                    window.location.reload();
-                                });
+        }
+        else {
+            setTimeout(function () {
+                $.ajax({
+                    'url':url,
+                    'type':'post',
+                    'data':{'ids':_idArray.toString()},
+                    'dataType':'JSON',
+                    'success':function (data) {
+                        //解绑操作
+                        $('#btnModalOk').unbind('click');
+                        if (data.status === 200){
+                            //重新绑定按钮点击事件，并加载页面
+                            $('#btnModalOk').bind('click',function () {
+                                window.location.reload();
+                            });
 
-                            }else {
-                                //删除失败，隐藏莫太狂
-                                $('#btnModalOk').bind('click',function () {
-                                    $('#modal-default').modal('hide');
-                                });
+                        }else {
+                            //删除失败，隐藏莫太狂
+                            $('#btnModalOk').bind('click',function () {
+                                $('#modal-default').modal('hide');
+                            });
 
-                            }
-                            //显示莫太狂，并添加信息
-                            $('#modal-message').html(data.message);
-                            $('#modal-default').modal('show');
                         }
-                    });
-                },500)
+                        //显示莫太狂，并添加信息
+                        $('#modal-message').html(data.message);
+                        $('#modal-default').modal('show');
+                    }
+                });
+            },500)
 
-            }
         }
     };
 
@@ -156,7 +175,7 @@ let App = function(){
                 handlerInitChecked();
                 checkAll();
             }
-        })
+        });
 
         return dataTable;
     };
@@ -265,6 +284,14 @@ let App = function(){
          */
         initDropZoneUpload:function (opts) {
             handlerInitDropZoneUpload(opts);
+        },
+        /**
+         * 初始化单个删除功能
+         * @param url
+         * @param id
+         */
+        initSingleDelete:function (url , id , msg) {
+            handlerSingleDelete(url , id , msg);
         }
     }
 }();

@@ -38,7 +38,7 @@
             <div class="row">
                 <div class="col-xs-12">
                     <c:if test="${baseResult != null}">
-                        <div class="alert alert-success alert-dismissible" id="display">
+                        <div class="alert alert-success alert-dismissible" id="message">
                             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
                                 ${baseResult.message}
                         </div>
@@ -86,25 +86,12 @@
                         <div class="box-header">
                             <h3 class="box-title">用户列表</h3>
                             <div class="row" style="padding-left: 12px;padding-top: 10px;">
-                                    <a href="/user/form" type="button" class="btn btn-default btn-sm"><i class="fa fa-search"></i> 增加</a>&nbsp;&nbsp;&nbsp;
+                                    <a href="/user/form" type="button" class="btn btn-default btn-sm"><i class="fa fa-plus"></i> 增加</a>&nbsp;&nbsp;&nbsp;
                                     <button  type="button" class="btn btn-default btn-sm" onclick="App.batchDelete('/user/batchDelete')"><i class="fa fa-trash"></i> 删除</button>&nbsp;&nbsp;&nbsp;
                                     <a href="#" type="button" class="btn btn-default btn-sm"><i class="fa fa-download"></i> 导入</a>&nbsp;&nbsp;&nbsp;
                                     <a href="#" type="button" class="btn btn-default btn-sm"><i class="fa fa-upload"></i> 导出</a>&nbsp;&nbsp;&nbsp;
                                     <button  type="button" class="btn btn-default btn-sm" onclick="$('.box-info-search').css('display') == 'none' ? $('.box-info-search').show('fast') : $('.box-info-search').hide('fast')"><i class="fa fa-search"></i> 搜索</button>
                             </div>
-
-
-<%--                                <div class="box-tools">--%>
-<%--                                    <div class="input-group input-group-sm" style="width: 150px;">--%>
-<%--                                        <input type="text" name="" class="form-control pull-right" placeholder="搜索" >--%>
-
-<%--                                        <div class="input-group-btn">--%>
-<%--                                            <button type="button" class="btn btn-default"><i class="fa fa-search"></i></button>--%>
-<%--                                        </div>--%>
-<%--                                    </div>--%>
-<%--                                </div>--%>
-
-
                         </div>
                         <!-- /.box-header -->
                         <div class="box-body table-responsive">
@@ -113,7 +100,7 @@
                                 <tr>
                                     <th>
                                         <label>
-                                         <input type="checkbox" class="minimal check_master">
+                                         <input type="checkbox" class="minimal check_master col-xs-1">
                                         </label>
                                     </th>
                                     <th>ID</th>
@@ -164,11 +151,15 @@
                     let detailUrl='/user/detail?id='+row.id;
                     return '<button onclick="App.showDetail(\''+detailUrl+'\');"  type="button" class="btn btn-default btn-sm"><i class="fa fa-search"></i> 查看</button >&nbsp;&nbsp;'+
                         '<a href="/user/form?id='+row.id+'" type="button" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i> 修改</a>&nbsp;&nbsp;'+
-                        '<a href="#" type="button" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i> 删除</a>&nbsp;&nbsp;';
+                        '<button onclick="App.initSingleDelete(\'/user/batchDelete\',\''+row.id+'\')" type="button" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i> 删除</button>&nbsp;&nbsp;';
                 }
             }
         ];
         _dataTable=App.initDataTables('/user/page' , columns);
+
+        setTimeout(function () {
+            $('#message').css("display" , "none")
+        } , 5000)
     });
 
     

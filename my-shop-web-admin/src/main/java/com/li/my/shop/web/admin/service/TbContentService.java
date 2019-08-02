@@ -8,4 +8,9 @@ import com.li.my.shop.domain.TbContent;
  */
 public interface TbContentService extends BaseService<TbContent> {
 
+    /**
+     * 批量删除通过categoryId
+     * @param ids
+     */
+    void deleteByCategoryIds(String[] ids);
 }

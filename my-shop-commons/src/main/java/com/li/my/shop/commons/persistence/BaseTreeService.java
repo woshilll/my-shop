@@ -37,4 +37,16 @@ public interface BaseTreeService<T extends BaseEntity> {
      * @return
      */
     List<T> selectByParentId(Long parentId);
+
+    /**
+     * 批量删除
+     * @param ids
+     */
+    void batchDelete(String[] ids);
+
+    /**
+     * 更新
+     * @param entity
+     */
+    void updateById(T entity);
 }

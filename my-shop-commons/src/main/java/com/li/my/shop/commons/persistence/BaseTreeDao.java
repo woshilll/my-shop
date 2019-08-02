@@ -39,4 +39,10 @@ public interface BaseTreeDao<T extends BaseEntity> {
      * @return
      */
     List<T> selectByParentId(Long parentId);
+
+    /**
+     * 批量删除
+     * @param ids
+     */
+    void batchDelete(String[] ids);
 }

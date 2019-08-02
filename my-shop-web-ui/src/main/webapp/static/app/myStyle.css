@@ -1,0 +1,23 @@
+.success
+{
+    background-color:#E6FEE4;
+    border-color:#01BE00;
+    background-repeat: no-repeat;
+    background-position: left 2px;
+    padding:0 18px;
+}
+.danger
+{
+    background-color:#FFF2E5;
+    border-color:#FF3300;
+    background-repeat: no-repeat;
+    background-position: left 2px;
+    padding:0 18px;
+}
+.button
+{
+    margin-left: 159px;
+    border: dashed 1px transparent;
+    background-color: transparent;
+    cursor: pointer;
+}

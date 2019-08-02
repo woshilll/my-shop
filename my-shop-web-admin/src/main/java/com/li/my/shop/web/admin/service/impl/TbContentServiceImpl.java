@@ -53,4 +53,8 @@ public class TbContentServiceImpl extends AbstractBaseServiceImpl<TbContent , Tb
     }
 
 
+    @Override
+    public void deleteByCategoryIds(String[] ids) {
+        dao.deleteByCategoryIds(ids);
+    }
 }

@@ -1,9 +1,11 @@
 package com.li.my.shop.web.admin.web.controller;
 
 import com.li.my.shop.commons.dto.BaseResult;
-import com.li.my.shop.domain.TbContent;
 import com.li.my.shop.domain.TbContentCategory;
+import com.li.my.shop.web.admin.abstracts.AbstractBaseTreeController;
 import com.li.my.shop.web.admin.service.TbContentCategoryService;
+import com.li.my.shop.web.admin.service.TbContentService;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -22,40 +24,41 @@ import java.util.List;
  */
 @Controller
 @RequestMapping(value = "/content/category")
-public class ContentCategoryController {
+public class ContentCategoryController extends AbstractBaseTreeController<TbContentCategory, TbContentCategoryService> {
+
     @Autowired
-    private TbContentCategoryService tbContentCategoryService;
-
-
+    private TbContentService tbContentService;
 
     /**
      * 跳转到内容分类列表界面
+     *
      * @param model
      * @return
      */
-    @RequestMapping(value = "/list" , method = RequestMethod.GET)
-    public String list(Model model){
+    @Override
+    @RequestMapping(value = "/list", method = RequestMethod.GET)
+    public String list(Model model) {
         List<TbContentCategory> targetContentCategories = new ArrayList<>();
-        List<TbContentCategory> sourceContentCategories = tbContentCategoryService.selectAll();
-        sortContentCategory(sourceContentCategories , targetContentCategories , 0L);
-        model.addAttribute("contentCategories" , targetContentCategories);
+        List<TbContentCategory> sourceContentCategories = service.selectAll();
+        sortList(sourceContentCategories, targetContentCategories, 0L);
+        model.addAttribute("contentCategories", targetContentCategories);
         return "content_category_list";
     }
 
 
-
     /**
      * 在@RequestMapping前加载，用于在jsp中的<form:form/>绑定ModelAttribute属性
+     *
      * @param id
      * @return
      */
     @ModelAttribute
-    public TbContentCategory before(Long id){
+    public TbContentCategory before(Long id) {
         TbContentCategory tbContentCategory;
-        if (id == null){
-            tbContentCategory=new TbContentCategory();
-        }else {
-            tbContentCategory=tbContentCategoryService.getById(id);
+        if (id == null) {
+            tbContentCategory = new TbContentCategory();
+        } else {
+            tbContentCategory = service.getById(id);
         }
         return tbContentCategory;
     }
@@ -63,61 +66,93 @@ public class ContentCategoryController {
 
     /**
      * 跳转到单个表单界面，可用于新增、查看和修改
+     *
      * @return
      */
-    @RequestMapping(value = "/form" , method = RequestMethod.GET)
-    public String form(TbContentCategory tbContentCategory){
+    @Override
+    @RequestMapping(value = "/form", method = RequestMethod.GET)
+    public String form(TbContentCategory tbContentCategory) {
         return "content_category_form";
     }
 
 
-
-
     /**
      * 新增或修改用户信息
+     *
      * @param tbContentCategory
      * @param model
      * @param redirectAttributes
      * @return
      */
-    @RequestMapping(value = "/save" ,method = RequestMethod.POST)
-    public String save(TbContentCategory tbContentCategory, Model model, RedirectAttributes redirectAttributes){
-        BaseResult baseResult = tbContentCategoryService.save(tbContentCategory);
-        if (baseResult.getStatus() == BaseResult.STATUS_SUCCESS){
-            redirectAttributes.addFlashAttribute("baseResult",baseResult);
+    @Override
+    @RequestMapping(value = "/save", method = RequestMethod.POST)
+    public String save(TbContentCategory tbContentCategory, Model model, RedirectAttributes redirectAttributes) {
+        BaseResult baseResult = service.save(tbContentCategory);
+        if (baseResult.getStatus() == BaseResult.STATUS_SUCCESS) {
+            redirectAttributes.addFlashAttribute("baseResult", baseResult);
             return "redirect:/content/category/list";
-        }else {
-            model.addAttribute("baseResult",baseResult);
+        } else {
+            model.addAttribute("baseResult", baseResult);
             return "content_category_form";
         }
     }
 
 
-
     /**
      * 分类树结构
+     *
      * @param id
      * @return
      */
+    @Override
     @ResponseBody
-    @RequestMapping(value = "/tree/data" , method = RequestMethod.POST)
-    public List<TbContentCategory> selectByParentId(Long id){
-        return tbContentCategoryService.selectByParentId(id);
+    @RequestMapping(value = "/tree/data", method = RequestMethod.POST)
+    public List<TbContentCategory> selectByParentId(Long id) {
+        return service.selectByParentId(id);
     }
 
-    private void sortContentCategory(List<TbContentCategory> sourceContentCategories , List<TbContentCategory> targetContentCategories , Long parentId){
-        for (TbContentCategory sourceContentCategory : sourceContentCategories) {
-            if (sourceContentCategory.getParent().getId().equals(parentId)){
-                targetContentCategories.add(sourceContentCategory);
-                if (sourceContentCategory.getIsParent()){
-                    for (TbContentCategory contentCategory : sourceContentCategories) {
-                        if (contentCategory.getParent().getId().equals(sourceContentCategory.getId())){
-                            sortContentCategory(sourceContentCategories , targetContentCategories , sourceContentCategory.getId());
-                            break;
-                        }
+    @Override
+    @ResponseBody
+    @RequestMapping(value = "delete", method = RequestMethod.POST)
+    public BaseResult delete(String ids) {
+        //强转
+        Long id = Long.parseLong(ids);
+        //获取当前分类信息
+        TbContentCategory tbContentCategory = service.getById(id);
+        //用于存放分类及其子分类id
+        List<String> idList = new ArrayList<>();
+        idList.add(id.toString());
+        //遍历获得所有的子分类id
+        getChildId(tbContentCategory, idList);
+        //转化为String类型数组
+        String[] idArray = idList.toArray(new String[idList.size()]);
+        //先删除所有分类相关内容
+        tbContentService.deleteByCategoryIds(idArray);
+        //删除所有分类
+        service.batchDelete(idArray);
+        //获取父分类id
+        Long parentId = tbContentCategory.getParent().getId();
+        //得到父Id的所有孩子
+        List<TbContentCategory> tbContentCategories = service.selectByParentId(parentId);
+        //得到父分类详情信息
+        TbContentCategory category = service.getById(parentId);
+        //判断父分类是不是顶层分类，以及是否有孩子
+        if (category.getParent().getId() != 0L && tbContentCategories.size() == 0){
+            //不是顶级节点，且没有孩子，是叶子节点
+            category.setIsParent(false);
+            //更新
+            service.updateById(category);
+        }
+        return BaseResult.success();
+    }
 
-                    }
-                }
+    void getChildId(TbContentCategory tbContentCategory, List<String> ids) {
+        if (tbContentCategory.getIsParent()) {
+            List<TbContentCategory> tbContentCategories = service.selectByParentId(tbContentCategory.getId());
+            for (TbContentCategory contentCategory : tbContentCategories) {
+                ids.add(contentCategory.getId().toString());
+                getChildId(contentCategory, ids);
+                continue;
             }
         }
     }

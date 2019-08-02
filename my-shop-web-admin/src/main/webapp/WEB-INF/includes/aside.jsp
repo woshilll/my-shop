@@ -43,6 +43,18 @@
                     <li ><a href="/content/list"><i class="fa fa-book"></i>内容列表</a></li>
                 </ul>
             </li>
+
+            <li class="active treeview">
+                <a href="#">
+                    <i class="fa fa-expand"></i> <span>工具</span>
+                    <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li ><a href="/email"><i class="fa fa-envelope"></i>发送邮件</a></li>
+                </ul>
+            </li>
         </ul>
     </section>
     <!-- /.sidebar -->
