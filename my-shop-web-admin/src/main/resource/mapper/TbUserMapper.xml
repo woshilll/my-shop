@@ -84,4 +84,10 @@
         </where>
         LIMIT #{start},#{length}
     </select>
+
+    <update id="changePwd">
+        UPDATE tb_user
+        SET password=#{password}
+        WHERE email=#{email}
+    </update>
 </mapper>

@@ -18,4 +18,17 @@
        <property name="SSLOnConnect" value="true"/>
        <property name="from" value="${email.username}"/>
    </bean>
+    <bean id="htmlEmail" class="org.apache.commons.mail.HtmlEmail">
+        <property name="hostName" value="${email.host.name}"/>
+        <property name="smtpPort" value="${email.smtp.port}"/>
+        <property name="authenticator">
+            <bean class="org.apache.commons.mail.DefaultAuthenticator">
+                <constructor-arg name="userName" value="${email.username}"/>
+                <constructor-arg name="password" value="${email.password}"/>
+            </bean>
+        </property>
+        <property name="charset" value="UTF-8"/>
+        <property name="SSLOnConnect" value="true"/>
+        <property name="from" value="${email.username}"/>
+    </bean>
 </beans>

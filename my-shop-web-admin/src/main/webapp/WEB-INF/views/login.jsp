@@ -74,7 +74,7 @@
 
             </div>
         </form>
-        <a href="#">忘记密码？</a><br>
+        <a href="/forget/password">忘记密码？</a><br>
     </div>
 
 </div>

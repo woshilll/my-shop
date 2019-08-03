@@ -25,7 +25,7 @@ public class EmailController {
 
     @RequestMapping(value = "send" , method = RequestMethod.POST)
     public String send(EmailDto emailDto) throws EmailException {
-        emailSendUtils.sendSimpleEmail(emailDto.getSubTitle() , emailDto.getContent() , emailDto.getTo());
+        emailSendUtils.sendHtmlEmail(emailDto.getSubTitle() , emailDto.getContent() , emailDto.getTo());
         return "email";
     }
 }

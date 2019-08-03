@@ -49,10 +49,22 @@ public class TbUserServiceImpl extends AbstractBaseServiceImpl<TbUser , TbUserDa
     }
 
     /**
+     * 通过邮箱修改密码
+     * @param email
+     * @param password
+     */
+    @Transactional(readOnly = false , rollbackFor = RuntimeException.class)
+    @Override
+    public void changePwd(String email, String password) {
+        dao.changePwd(email , password);
+    }
+
+    /**
      * 更新或则新增用户
      * @param tbUser
      * @return
      */
+    @Transactional(readOnly = false , rollbackFor = RuntimeException.class)
     @Override
     public BaseResult save(TbUser tbUser) {
         String validator = BeanValidator.validator(tbUser);

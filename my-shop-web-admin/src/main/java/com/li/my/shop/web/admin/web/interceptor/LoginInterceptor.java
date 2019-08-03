@@ -1,7 +1,9 @@
 package com.li.my.shop.web.admin.web.interceptor;
 
 import com.li.my.shop.commons.ConstantUtils;
+import com.li.my.shop.commons.utils.CookieUtils;
 import com.li.my.shop.domain.TbUser;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Repository;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
@@ -19,8 +21,8 @@ public class LoginInterceptor implements HandlerInterceptor {
     @Override
     public boolean preHandle(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Object o) throws Exception {
         TbUser user = (TbUser) httpServletRequest.getSession().getAttribute(ConstantUtils.SESSION_USER);
+        //用户未登录，重定向到登录界面
         if (user == null){
-            //用户未登录，重定向到登录界面
             httpServletResponse.sendRedirect("/login");
             return false;
         }
