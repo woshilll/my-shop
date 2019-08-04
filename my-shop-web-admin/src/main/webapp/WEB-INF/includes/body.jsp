@@ -53,3 +53,7 @@
 <%--<script src="/static/assets/app/validate.js"></script>--%>
 <script src="/static/assets/app/app.js"></script>
 <script src="/static/assets/app/dateTime.js"></script>
+<!-- export excel -->
+<script src="/static/assets/bower_components/datatables.net/js/dataTables.buttons.min.js"></script>
+<script src="/static/assets/bower_components/datatables.net/js/buttons.html5.min.js"></script>
+<script src="/static/assets/bower_components/datatables.net/js/jszip.min.js"></script>

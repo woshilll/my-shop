@@ -7,6 +7,10 @@
         <param-name>contextConfigLocation</param-name>
         <param-value>classpath:spring-context*.xml</param-value>
     </context-param>
+    <error-page>
+        <error-code>404</error-code>
+        <location>/error/404</location>
+    </error-page>
     <listener>
         <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
     </listener>

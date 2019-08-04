@@ -127,6 +127,7 @@ let App = function(){
     };
 
 
+
     /**
      * 分页数据功能
      * @param url
@@ -134,7 +135,21 @@ let App = function(){
      * @returns {jQuery}
      */
     let handlerDataTables = function (url , columns) {
+        let x = new Array();
+        for (let i = 1; i < columns.length -1; i++) {
+            x.push(i)
+        }
         let dataTable=$('#dataTables').DataTable({
+            dom: 'Bfrtip',
+            buttons: [
+                {
+                    extend: 'excel',
+                    exportOptions: {
+                        columns: x,
+
+                    },
+                }
+            ],
             'paging':true,
             'info':true,
             'lengthChange':false,
@@ -176,6 +191,9 @@ let App = function(){
                 checkAll();
             }
         });
+        let excel = $('.dt-button');
+        excel.attr('id','export');
+        excel.css('display','none')
 
         return dataTable;
     };

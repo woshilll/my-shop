@@ -8,6 +8,7 @@
 <head>
     <title>我的商城 | 用户管理</title>
     <jsp:include page="../includes/head.jsp"/>
+
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
@@ -88,8 +89,7 @@
                             <div class="row" style="padding-left: 12px;padding-top: 10px;">
                                     <a href="/user/form" type="button" class="btn btn-default btn-sm"><i class="fa fa-plus"></i> 增加</a>&nbsp;&nbsp;&nbsp;
                                     <button  type="button" class="btn btn-default btn-sm" onclick="App.batchDelete('/user/batchDelete')"><i class="fa fa-trash"></i> 删除</button>&nbsp;&nbsp;&nbsp;
-                                    <a href="#" type="button" class="btn btn-default btn-sm"><i class="fa fa-download"></i> 导入</a>&nbsp;&nbsp;&nbsp;
-                                    <a href="#" type="button" class="btn btn-default btn-sm"><i class="fa fa-upload"></i> 导出</a>&nbsp;&nbsp;&nbsp;
+                                    <button onclick="$('#export').click();" type="button" class="btn btn-default btn-sm"><i class="fa fa-upload"></i> 导出</button>&nbsp;&nbsp;&nbsp;
                                     <button  type="button" class="btn btn-default btn-sm" onclick="$('.box-info-search').css('display') == 'none' ? $('.box-info-search').show('fast') : $('.box-info-search').hide('fast')"><i class="fa fa-search"></i> 搜索</button>
                             </div>
                         </div>
@@ -128,6 +128,7 @@
     <jsp:include page="../includes/footer.jsp"/>
 </div>
 <jsp:include page="../includes/body.jsp"/>
+
 <sys:modal/>
 
 <script>
@@ -156,10 +157,11 @@
             }
         ];
         _dataTable=App.initDataTables('/user/page' , columns);
-
         setTimeout(function () {
             $('#message').css("display" , "none")
-        } , 5000)
+        } , 5000);
+
+
     });
 
     
@@ -175,6 +177,9 @@
         _dataTable.settings()[0].ajax.data=param;
         _dataTable.ajax.reload();
     }
+    // function export_out() {
+    //     $('#export').click();
+    // }
 </script>
 
 
